@@ -1,5 +1,4 @@
-function extractNameFromTemplate(value) {
-    return value.slice(7, value.length - 1);
+function removeLeadingAndTrailingWhitespaces(value) {
+    return value.trim();
 }
-
-console.log(extractNameFromTemplate('Hello, John Doe!'));
+console.log(removeLeadingAndTrailingWhitespaces("\tHellow"));
