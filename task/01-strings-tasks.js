@@ -227,7 +227,20 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+    var cipherText = '';
+    for (var i = 0; i < str.length; i++) {
+        if ((str.charCodeAt(i) > 64 && str.charCodeAt(i) < 78) || 
+            (str.charCodeAt(i) > 96 && str.charCodeAt(i) < 110)) {
+            cipherText += String.fromCharCode(str.charCodeAt(i) + 13);
+        }
+        else if ((str.charCodeAt(i) > 77 && str.charCodeAt(i) < 91) || 
+            (str.charCodeAt(i) > 109 && str.charCodeAt(i) < 123)) {
+            cipherText += String.fromCharCode(str.charCodeAt(i) - 13);
+        }
+        else
+            cipherText += str[i];
+    }
+    return cipherText;
 }
 
 /**
@@ -244,7 +257,10 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    throw new Error('Not implemented');
+    if (typeof value == 'string' || value instanceof String)
+        return true;
+    else
+        return false;
 }
 
 
@@ -273,7 +289,14 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    throw new Error('Not implemented');
+    var deck = [
+        'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
+        'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
+        'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
+        'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'
+    ];
+
+    return deck.indexOf(value);
 }
 
 

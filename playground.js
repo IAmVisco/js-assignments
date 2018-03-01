@@ -1,10 +1,10 @@
-function getRectangleString(width, height) {
-	var header = '┌' + '─'.repeat(width - 2) + '┐\n';
-	var footer = '└' + '─'.repeat(width - 2) + '┘';
-	var body = '';
-    for (var i = 0; i < height - 2; i++) {
-    	body += '|' + ' '.repeat(width - 2) + '|\n';
-    }
-    return header + body + footer;
+function encodeToRot13(str) {
+    deck = [
+        'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
+        'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
+        'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
+        'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'
+    ];
+    return deck.indexOf('A♣');
 }
-console.log(getRectangleString(6, 4));
+console.log(encodeToRot13('A♣'));
