@@ -1,10 +1,4 @@
-function encodeToRot13(str) {
-    deck = [
-        'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
-        'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
-        'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
-        'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'
-    ];
-    return deck.indexOf('A♣');
+function getAverage(value1, value2) {
+    return (value1 + value2) / 2;
 }
-console.log(encodeToRot13('A♣'));
+console.log(getAverage(-3, 3));
