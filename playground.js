@@ -1,4 +1,11 @@
-function getAverage(value1, value2) {
-    return (value1 + value2) / 2;
+function toNumber(value, def) {
+    if ((typeof value == 'number' || 
+    	value instanceof Number || 
+    	typeof parseInt(value) == 'number') && value != null)
+    {
+        return value;
+    }
+    else
+        return def;
 }
-console.log(getAverage(-3, 3));
+console.log(toNumber('test', 0));

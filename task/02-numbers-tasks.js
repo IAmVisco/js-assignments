@@ -74,7 +74,9 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    var x = Math.abs(x1 - x2);
+    var y = Math.abs(y1 - y2);
+    return Math.sqrt(x*x + y*y);
 }
 
 /**
@@ -90,7 +92,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-    throw new Error('Not implemented');
+    return -1 * b / a;
 }
 
 
@@ -128,7 +130,8 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-    throw new Error('Not implemented');
+    var str = value.toString();
+    return str[str.length - 1];
 }
 
 
@@ -144,7 +147,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-    throw new Error('Not implemented');
+    return parseFloat(value);
 }
 
 /**
@@ -161,7 +164,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a, b, c) {
-    throw new Error('Not implemented');
+    return Math.sqrt(a*a + b*b + c*c);
 }
 
 /**
@@ -203,7 +206,28 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-    throw new Error('Not implemented');
+    if (n <= 1)
+    {
+        return false;
+    }
+    else if (n <= 3)
+    {
+        return true;
+    }
+    else if ((n % 2 == 0) || (n % 3 == 0))
+    {
+        return false;
+    }
+    var i = 5;
+    while (i*i <= n)
+    {
+        if ((n % i == 0) || (n % (i + 2) == 0))
+        {
+            return false
+        }
+        i = i + 6;
+    }
+    return true;
 }
 
 /**
@@ -222,7 +246,15 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-    throw new Error('Not implemented');
+    // if ((typeof value == 'number' || 
+    //     value instanceof Number || 
+    //     typeof parseInt(value) == 'number') && value != null)
+    // {
+    //     return value;
+    // }
+    // else
+    //     return def;
+    throw new Error("Not implemented");
 }
 
 module.exports = {
