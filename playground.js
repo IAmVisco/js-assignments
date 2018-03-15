@@ -1,11 +1,7 @@
-function toNumber(value, def) {
-    if ((typeof value == 'number' || 
-    	value instanceof Number || 
-    	typeof parseInt(value) == 'number') && value != null)
-    {
-        return value;
-    }
-    else
-        return def;
+function timeSpanToString(startDate, endDate) {
+    var timespan = new Date(endDate - startDate);    
+    return timespan.toISOString().slice(11, -1); 
 }
-console.log(toNumber('test', 0));
+startDate = new Date(2000,1,1,10,0,0);
+endDate = new Date(2000,1,1,11,0,0);
+console.log(timeSpanToString(startDate, endDate));
