@@ -1,5 +1,12 @@
-function propagateItemsByPositionIndex(arr) {
-   return arr.map(x => x.repeat(arr.indexOf(x) + 1));
+function getDigitalRoot(num) {
+    let sum = 0;
+    for (let digit of ""+num)
+    {
+        sum += Number(digit);
+    }
+    console.log(sum);
+    if (sum > 9)
+        return getDigitalRoot(sum);
+    return sum;
 }
-var arr = [ 1];
-console.log(propagateItemsByPositionIndex(arr));
+console.log(getDigitalRoot(12345));
