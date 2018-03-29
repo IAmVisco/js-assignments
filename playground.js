@@ -1,12 +1,12 @@
-function getDigitalRoot(num) {
-    let sum = 0;
-    for (let digit of ""+num)
-    {
-        sum += Number(digit);
+function* getFibonacciSequence() {
+    let a = 1;
+    let b = 0;
+    while (b < 63245986) {
+        let cur = b;
+        b = a;
+        a += cur;
+        yield cur;
     }
-    console.log(sum);
-    if (sum > 9)
-        return getDigitalRoot(sum);
-    return sum;
 }
-console.log(getDigitalRoot(12345));
+for (let num of getFibonacciSequence())
+	console.log(num);
