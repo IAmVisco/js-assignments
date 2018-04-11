@@ -178,7 +178,20 @@ function logger(func, logFunc) {
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
 function partialUsingArguments(fn) {
-    throw new Error('Not implemented');
+    let args = arguments;
+    if (args.length > 1) {
+        let args1 = [];
+        for (let i = 1; i < args.length; i++) 
+            args1.push(args[i]);
+        return function () {
+            let args2 = args1.slice();
+            for (let i = 1; i < arguments.length; i++) 
+                args2.push(args[i]);
+            return fn.call(this, args2);
+        }
+    }
+    else
+        return fn;
 }
 
 
@@ -199,7 +212,9 @@ function partialUsingArguments(fn) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(startFrom) {
-    throw new Error('Not implemented');
+    return function() {
+        return startFrom++;
+    };
 }
 
 
