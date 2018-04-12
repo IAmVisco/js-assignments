@@ -115,6 +115,7 @@ function getZigZagMatrix(n) {
                 j--;
         }
     }
+    return mtx;
 }
 
 
