@@ -144,16 +144,13 @@ function* depthTraversalTree(root) {
  *
  */
 function* breadthTraversalTree(root) {
-    // let nodes = [root];
-    // while(nodes.length) {
-    //     let current = nodes.shift();
-    //     yield current;
-    //     if(current.children){
-    //         nodes = nodes.concat(current.children);
-    //     }
-    // }
-    // exceeds time limit on last test
-    throw new Error('Not implemented');
+    let queue = [[root]];
+    while (queue.length > 0) {
+        for (let node of queue.shift()) {
+            yield node;
+            if (node.children) queue.push(node.children);
+        }
+    }
 }
 
 
